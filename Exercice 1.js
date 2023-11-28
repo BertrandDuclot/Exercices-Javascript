@@ -1,3 +1,5 @@
+// Exercice "Total Amount of Points"
+
 function points(games) {
   let score = 0;
 
@@ -16,10 +18,10 @@ function points(games) {
       score += 1;
     }
   }
-  console.log(score);
+  console.log("Score : ", score);
   return score;
 }
 
-// Exemple of usage
+// Example of usage
 const matchResults = ["1:2", "2:2", "3:3"];
 const teamPoints = points(matchResults);
