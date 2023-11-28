@@ -1,3 +1,3 @@
 # Exercices-Javascript
 
-Exercices are from codewars.com .
+Exercices are from codewars.com
