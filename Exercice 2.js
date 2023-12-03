@@ -6,22 +6,19 @@ console.log(couleur2);*/
 
 /* ---------- Add length exercice ---------- */
 // Link https://www.codewars.com/kata/559d2284b5bb6799e9000047/train/javascript
+// String array and mixed array
 
 function addLength(str) {
+  // Divisez la chaîne en mots
+  const words = str.split(" ");
 
-  for (i = 0; i < str.lenght ; i++) {
+  // Utilisez la méthode map pour créer un nouveau tableau
+  // où chaque élément est une chaîne contenant le mot et sa longueur
+  const resultArray = words.map((word) => `${word} ${word.length}`);
 
-  const [words[i]] = str.split(" ");
-
-  console.log(words);
-}
+  return resultArray;
 }
 
 // Testing
-addLength("merci test test2");
-
-// 1 Détacher les mots 
-
-// 2 Compter le nombre de caractères par mots
-
-// 3 Ajouter les mots + nombre de caractères à un array
+const result = addLength("merci test test2");
+console.log(result);
