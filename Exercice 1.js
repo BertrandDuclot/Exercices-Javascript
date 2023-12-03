@@ -1,4 +1,5 @@
 // Exercice "Total Amount of Points"
+// Link : https://www.codewars.com/kata/5bb904724c47249b10000131
 
 function points(games) {
   let score = 0;
