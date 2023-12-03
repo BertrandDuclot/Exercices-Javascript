@@ -9,7 +9,7 @@ console.log(couleur2);*/
 // String array and mixed array
 
 function addLength(str) {
-  // Divisez la chaîne en mots
+
   const words = str.split(" ");
 
   const resultArray = words.map((word) => `${word} ${word.length}`);
