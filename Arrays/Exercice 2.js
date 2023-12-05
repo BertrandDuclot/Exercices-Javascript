@@ -10,7 +10,6 @@ console.log(couleur2);*/
 
 // With map function
 function addLength(str) {
-
   const words = str.split(" ");
 
   const resultArray = words.map((word) => `${word} ${word.length}`);
