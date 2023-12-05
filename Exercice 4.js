@@ -16,15 +16,29 @@
 test = [1, 2, 3, 4];
 each_cons(test, 2);*/
 
-/* */
+/* Best */
 
-function each_cons(list, n) {
+function eachCons(array, n) {
+  let res = [];
+
+  for (let i = 0; i < array.length; i++) {
+    res.push(array.slice(i, i + n));
+  }
+
+  return res.filter((e) => e.length === n);
+}
+
+console.log(eachCons([1, 2, 3, 4], 2));
+
+/*function each_cons(list, n) {
   const result = [];
 
-  for (let i = 0; i <= list.length - n; i++) {
+  console.log(list.length - n);
+
+  for (let j = 0; j <= list.length - n; j++) {
     const subset = [];
-    for (let j = 0; j < n; j++) {
-      subset.push(list[i + j]);
+    for (let i = 0; i < n; i++) {
+      subset.push(list[j + i]);
     }
     result.push(subset);
   }
@@ -33,5 +47,5 @@ function each_cons(list, n) {
 }
 
 // Test cases
-console.log(each_cons([1, 2, 3, 4], 2));
-console.log(each_cons([1, 2, 3, 4], 3));
+console.log(each_cons([7, 8, 3, 4], 2));
+//console.log(each_cons([1, 2, 3, 4], 3));*/
