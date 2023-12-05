@@ -10,11 +10,9 @@ console.log(couleur2);*/
 
 // With map function
 function addLength(str) {
-  // Divisez la chaîne en mots
+
   const words = str.split(" ");
 
-  // Utilisez la méthode map pour créer un nouveau tableau
-  // où chaque élément est une chaîne contenant le mot et sa longueur
   const resultArray = words.map((word) => `${word} ${word.length}`);
 
   return resultArray;
