@@ -16,19 +16,24 @@ class Person {
   get age() {
     return console.log("Age test");
   }
+
+  // Set a properly that already exists
+  set firstName(name) {
+    console.log("fullName executed");
+    this._firstName = name;
+  }
+
+  get firstName() {
+    return this._firstName;
+  }
 }
 
+// Tests
 const roger = new Person("roger", 1950);
-console.log(roger);
-
-// Calling methods
-roger.calcAge();
 
 console.log(roger.__proto__ == Person.prototype);
 
-roger.greet();
-
-roger.age;
+console.log(roger);
 
 // Hoisted
 
