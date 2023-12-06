@@ -5,6 +5,7 @@ class Person {
     this.birthYear = birthYear;
   }
 
+  // Instance methods
   calcAge() {
     console.log(`${this.firstName}` + " birthyear is " + `${this.birthYear}`);
   }
@@ -17,15 +18,19 @@ class Person {
     return console.log("Age test");
   }
 
-  // Set a properly that already exists
   set firstName(name) {
-    console.log("fullName executed");
+    console.log("firstName Setter executed");
     this._firstName = name;
   }
 
   get firstName() {
     return this._firstName;
   }
+
+  // Static method => not on the prototype but on the class
+  static hello = function () {
+    console.log("hello");
+  };
 }
 
 // Tests
@@ -56,3 +61,7 @@ console.log(account.latest);
 
 account.test = 50;
 console.log(account.movements);
+
+// Array.from() (namespace)
+
+Person.hello();
