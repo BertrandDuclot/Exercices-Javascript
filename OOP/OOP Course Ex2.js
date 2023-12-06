@@ -42,6 +42,8 @@ console.log(roger);
 
 // Hoisted
 
+////////////////////////////////////////////////////////////////////
+
 // Getters and Setters
 
 const account = {
@@ -65,3 +67,19 @@ console.log(account.movements);
 // Array.from() (namespace)
 
 Person.hello();
+
+//////////////////////////////////////////////////////////////////
+
+// Using Object.create
+
+const PersonProto = {
+  calcAge() {
+    console.log(`${this.name}` + " birthyear is " + `${this.birthYear}`);
+  },
+};
+
+const bob = Object.create(PersonProto);
+console.log(bob);
+bob.name = "bob";
+bob.birthYear = "2000";
+bob.calcAge();
