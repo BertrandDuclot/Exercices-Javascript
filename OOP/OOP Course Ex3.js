@@ -33,3 +33,17 @@ mike.calcAge();
 
 // Changing prototype of Student
 Student.prototype.constructor = Student;
+
+///////////////////////////////////////////////////////
+// Inheritance
+///////////////////////////////////////////////////////
+
+class Student extends Person {
+  constructor(firstName, birthYear, course) {
+    super(firstName, birthYear);
+    this.course = course;
+  }
+}
+
+const martha = new Student("Martha", 2012, "CS");
+console.log(martha);
