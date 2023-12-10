@@ -95,3 +95,42 @@ const {
   fri: { open: o, close: c },
 } = openingHours;
 console.log(o, c);
+
+// Short Circuiting
+
+console.log(3 || "test");
+
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+// AND
+console.log(0 && "test");
+
+// Logical assignments
+const rest1 = {
+  name: "capri",
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: "La Piazza",
+  owner: "owner name",
+};
+
+/*rest1.numGuests = rest1.numGuests || 10;
+rest2.numGuests = rest2.numGuests || 10;*/
+
+// More concise way
+
+//rest1.numGuests ||= 10;
+rest2.numGuests ??= 10;
+rest2.owner = rest2.owner && "<TEST>";
+console.log(rest1.name);
+rest1.name &&= "<TEST2>";
+console.log(rest1.name);
+
+//console.log(rest1);
+//console.log(rest2);
