@@ -134,3 +134,23 @@ console.log(rest1.name);
 
 //console.log(rest1);
 //console.log(rest2);
+
+///////////////////////////////////////////////////////////
+///////////////////// Looping arrays //////////////////////
+///////////////////////////////////////////////////////////
+
+const menuu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menuu) console.log(item);
+
+// Normal
+for (const item of menuu.entries()) {
+  console.log(`${item[0] + 1}: ${item[1]}`);
+}
+
+// Destructured
+for (const [i, el] of menuu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+//console.log([...menuu.entries()]);
