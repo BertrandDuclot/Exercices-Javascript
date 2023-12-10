@@ -154,3 +154,48 @@ for (const [i, el] of menuu.entries()) {
 }
 
 //console.log([...menuu.entries()]);
+
+// Without optional Chaining
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// Optional Chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example of Optional Chaining
+const days = ["mon", "tue", "Fri"];
+for (const day of days) {
+  console.log(day);
+  const open = restaurant.openingHours.day?.open ?? "closed";
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? "Method does not exist");
+
+// Arrays
+const users = [{ name: "Jonas", email: "test@email.fr" }];
+console.log(users[0]?.name ?? "Array empty");
+
+// Looping objects
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `we are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}`;
+}
+console.log(openStr);
+
+// Property values
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entire object
+const entries = Object.entries(openingHours);
+//console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`${key}, ${open}, ${close}`);
+}
