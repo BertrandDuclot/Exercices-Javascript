@@ -1,31 +1,31 @@
 // Destructuring array
+const weekdays = ["mon", "tue"];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 15,
+    close: 32,
+  },
+};
+
 const restaurant = {
   name: "nom restaurant",
   location: "location restaurant",
   categories: ["Fastfood", "Organic", "Not Organic"],
   starterMenu: ["Menu1", "Menu2", "Menu3"],
   mainMenu: ["Pizza", "Pasta"],
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
 
-    fri: {
-      open: 12,
-      close: 22,
-    },
-  },
-  order: function (starterIndex, mainIndex) {
+  // Enhanced object literal
+  openingHours,
+
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    time = "20:00",
-    address,
-  }) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = "20:00", address }) {
     console.log(starterIndex, mainIndex, time, address);
   },
 };
@@ -68,7 +68,7 @@ console.log(p, q, r);
 ///////////////////// Destructuring objects /////////////////////
 /////////////////////////////////////////////////////////////////
 
-const { name, openingHours, categories } = restaurant;
+/*const { name, openingHours, categories } = restaurant;*/
 
 //console.log(name, openingHours, categories)
 
@@ -90,11 +90,11 @@ const obj = { a: 23, b: 7, c: 14 };
 ({ a, b } = obj);
 console.log(a, b);
 
-// Nested object
+/*Nested object
 const {
   fri: { open: o, close: c },
 } = openingHours;
-console.log(o, c);
+console.log(o, c);*/
 
 // Short Circuiting
 
